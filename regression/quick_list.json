@@ -1,0 +1,10 @@
+{
+  "description": "Quick sanity regression (~1 minute on 8 cores).",
+  "jobs": [
+    {"test": "ddr_smoke_test",       "seeds": 2, "seed_base": 1},
+    {"test": "ddr_rand_test",        "seeds": 4, "seed_base": 1001, "num_txn": 2000},
+    {"test": "ddr_hazard_test",      "seeds": 1, "seed_base": 3201, "num_txn": 1500},
+    {"test": "ddr_refresh_test",     "seeds": 1, "seed_base": 3401, "num_txn": 1500},
+    {"test": "ddr_row_alias_test",   "seeds": 1, "seed_base": 3501, "num_txn": 1000}
+  ]
+}

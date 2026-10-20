@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="360" font-family="Helvetica,Arial,sans-serif" font-size="12">
+<rect width="760" height="360" fill="white"/>
+<text x="380.0" y="22" text-anchor="middle" font-size="15" font-weight="bold">Functional coverage closure</text>
+<line x1="64" x2="736" y1="308.0" y2="308.0" stroke="#e5e7eb"/>
+<text x="56" y="312.0" text-anchor="end">50</text>
+<line x1="64" x2="736" y1="254.4" y2="254.4" stroke="#e5e7eb"/>
+<text x="56" y="258.4" text-anchor="end">60</text>
+<line x1="64" x2="736" y1="200.8" y2="200.8" stroke="#e5e7eb"/>
+<text x="56" y="204.8" text-anchor="end">70</text>
+<line x1="64" x2="736" y1="147.2" y2="147.2" stroke="#e5e7eb"/>
+<text x="56" y="151.2" text-anchor="end">80</text>
+<line x1="64" x2="736" y1="93.6" y2="93.6" stroke="#e5e7eb"/>
+<text x="56" y="97.6" text-anchor="end">90</text>
+<line x1="64" x2="736" y1="40.0" y2="40.0" stroke="#e5e7eb"/>
+<text x="56" y="44.0" text-anchor="end">100</text>
+<text x="64.0" y="326" text-anchor="middle">0k</text>
+<text x="198.4" y="326" text-anchor="middle">2k</text>
+<text x="332.8" y="326" text-anchor="middle">3k</text>
+<text x="467.2" y="326" text-anchor="middle">5k</text>
+<text x="601.6" y="326" text-anchor="middle">6k</text>
+<text x="736.0" y="326" text-anchor="middle">8k</text>
+<rect x="64" y="40" width="672" height="268" fill="none" stroke="#374151"/>
+<text x="400.0" y="348" text-anchor="middle">host requests (merged across seeds)</text>
+<text transform="translate(16,174.0) rotate(-90)" text-anchor="middle">planned bins hit (%)</text>
+<path d="M64.0,576.0 L232.0,50.4 L400.0,50.4 L568.0,45.2 L736.0,40.0" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+<circle cx="64.0" cy="576.0" r="2.6" fill="#2563eb"/>
+<circle cx="232.0" cy="50.4" r="2.6" fill="#2563eb"/>
+<circle cx="400.0" cy="50.4" r="2.6" fill="#2563eb"/>
+<circle cx="568.0" cy="45.2" r="2.6" fill="#2563eb"/>
+<circle cx="736.0" cy="40.0" r="2.6" fill="#2563eb"/>
+<line x1="506" x2="530" y1="58" y2="58" stroke="#2563eb" stroke-width="2.2"/>
+<text x="536" y="62">mixed directed-random</text>
+</svg>

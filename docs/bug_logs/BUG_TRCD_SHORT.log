@@ -1,0 +1,14 @@
+# make run BUG=BUG_TRCD_SHORT TEST=ddr_rand_test SEED=1 NUM_TXN=2000 TRACE=1
+@16 MRS  val=0x0045
+@22 ACT  ba=1 row=0x003
+UVM_ERROR [SVA_TRCD] (cycle 25) bank 1 RD 3 cycles after ACT (tRCD=4): premature column access
+@25 RD   ba=1 col=0x4c
+UVM_WARNING [DRAM_PHYS] (cycle 25) bank 1 RD 3 cycles after ACT (tRCD=4): sense amps not settled
+UVM_ERROR [SB_DATA_MISMATCH] (cycle 31) read id=0 ba=1 row=0x003 col=0x4c accepted @20 returned @31
+      expected 0x9fd844376ae14f66
+      actual   0x4175fad8614cbf6b  (xor 0xdeadbeef0badf00d)
+      last writer id=-1 @0
+      diagnosis: DRAM corruption signature (device-level timing/refresh abuse)
+UVM_ERROR [SVA_TRCD] (cycle 34) bank 3 RD 3 cycles after ACT (tRCD=4): premature column access
+UVM_WARNING [DRAM_PHYS] (cycle 34) bank 3 RD 3 cycles after ACT (tRCD=4): sense amps not settled
+UVM_ERROR [SVA_TRCD] (cycle 36) bank 0 RD 3 cycles after ACT (tRCD=4): premature column access

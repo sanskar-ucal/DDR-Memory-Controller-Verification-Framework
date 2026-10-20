@@ -1,0 +1,93 @@
+{
+ "clean": {
+  "seeds": [
+   1,
+   2
+  ],
+  "failing_seeds": [],
+  "failing_seeds_no_sva": [],
+  "first_layers": {},
+  "error_ids": {},
+  "first_cycle_min": null,
+  "first_cycle_median": null,
+  "no_sva_first_ids": [],
+  "no_sva_cycle_median": null
+ },
+ "BUG_TRCD_SHORT": {
+  "seeds": [
+   1,
+   2
+  ],
+  "failing_seeds": [
+   1,
+   2
+  ],
+  "failing_seeds_no_sva": [
+   1,
+   2
+  ],
+  "first_layers": {
+   "SVA protocol": 2
+  },
+  "error_ids": {
+   "SB_DATA_MISMATCH": 5,
+   "SVA_TRCD": 15
+  },
+  "first_cycle_min": 25,
+  "first_cycle_median": 34,
+  "no_sva_first_ids": [
+   "SB_DATA_MISMATCH"
+  ],
+  "no_sva_cycle_median": 48,
+  "repro": {
+   "seed": 1,
+   "first_error": {
+    "severity": "UVM_ERROR",
+    "id": "SVA_TRCD",
+    "source": "reporter",
+    "cycle": 25,
+    "message": "bank 1 RD 3 cycles after ACT (tRCD=4): premature column access"
+   },
+   "svg": "docs/waves/BUG_TRCD_SHORT.svg",
+   "log": "docs/bug_logs/BUG_TRCD_SHORT.log"
+  }
+ },
+ "BUG_RAW_HAZARD": {
+  "seeds": [
+   1,
+   2
+  ],
+  "failing_seeds": [
+   1,
+   2
+  ],
+  "failing_seeds_no_sva": [
+   1,
+   2
+  ],
+  "first_layers": {
+   "scoreboard": 2
+  },
+  "error_ids": {
+   "SB_DATA_MISMATCH": 20
+  },
+  "first_cycle_min": 861,
+  "first_cycle_median": 945,
+  "no_sva_first_ids": [
+   "SB_DATA_MISMATCH"
+  ],
+  "no_sva_cycle_median": 945,
+  "repro": {
+   "seed": 2,
+   "first_error": {
+    "severity": "UVM_ERROR",
+    "id": "SB_DATA_MISMATCH",
+    "source": "uvm_test_top.env.sb",
+    "cycle": 861,
+    "message": "read id=167 ba=3 row=0x006 col=0x17 accepted @849 returned @861 | expected 0xd52871d25e774f1a | actual   0xf33b269d7289f9b9  (xor 0x2613574f2cfeb6a3) | last writer id=165 @847 | diagnosis: stale data: value from 1 write(s) earlier (ordering / hazard violation)"
+   },
+   "svg": "docs/waves/BUG_RAW_HAZARD.svg",
+   "log": "docs/bug_logs/BUG_RAW_HAZARD.log"
+  }
+ }
+}
