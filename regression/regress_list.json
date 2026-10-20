@@ -1,0 +1,17 @@
+{
+  "description": "Full regression. Each entry runs <seeds> consecutive seeds starting at <seed_base>; num_txn overrides the test default.",
+  "jobs": [
+    {"test": "ddr_soak_test",          "seeds": 1,  "seed_base": 7001, "num_txn": 100000},
+    {"test": "ddr_rand_test",          "seeds": 16, "seed_base": 1001},
+    {"test": "ddr_random_only_test",   "seeds": 4,  "seed_base": 2001},
+    {"test": "ddr_row_hit_test",       "seeds": 2,  "seed_base": 3001},
+    {"test": "ddr_bank_conflict_test", "seeds": 2,  "seed_base": 3101},
+    {"test": "ddr_hazard_test",        "seeds": 3,  "seed_base": 3201},
+    {"test": "ddr_b2b_test",           "seeds": 2,  "seed_base": 3301},
+    {"test": "ddr_refresh_test",       "seeds": 3,  "seed_base": 3401},
+    {"test": "ddr_row_alias_test",     "seeds": 2,  "seed_base": 3501},
+    {"test": "ddr_corner_test",        "seeds": 2,  "seed_base": 3601},
+    {"test": "ddr_smoke_test",         "seeds": 2,  "seed_base": 1}
+  ],
+  "determinism_check": {"test": "ddr_rand_test", "seed": 1001}
+}

@@ -1,0 +1,32 @@
+# make run BUG=BUG_RAW_HAZARD TEST=ddr_rand_test SEED=2 NUM_TXN=2000 TRACE=1
+@842 ACT  ba=1 row=0xc41
+@846 RD   ba=1 col=0x4f
+@849 ACT  ba=3 row=0x006
+@852 PRE  ba=1
+@853 RD   ba=3 col=0x20
+@854 ACT  ba=0 row=0x006
+@855 RD   ba=3 col=0x17
+@856 ACT  ba=1 row=0x006
+@857 RD   ba=3 col=0x5a
+@859 RD   ba=0 col=0x5a
+UVM_ERROR [SB_DATA_MISMATCH] (cycle 861) read id=167 ba=3 row=0x006 col=0x17 accepted @849 returned @861
+      expected 0xd52871d25e774f1a
+      actual   0xf33b269d7289f9b9  (xor 0x2613574f2cfeb6a3)
+      last writer id=165 @847
+      diagnosis: stale data: value from 1 write(s) earlier (ordering / hazard violation)
+@862 WR   ba=1 col=0x4f
+UVM_ERROR [SB_DATA_MISMATCH] (cycle 1286) read id=35 ba=2 row=0x006 col=0xdf accepted @1278 returned @1286
+      expected 0x0000000000000000
+      actual   0xffffffffffffffff  (xor 0xffffffffffffffff)
+      last writer id=38 @1285
+      diagnosis: stale data: value from 3 write(s) earlier (ordering / hazard violation)
+UVM_ERROR [SB_DATA_MISMATCH] (cycle 1841) read id=171 ba=1 row=0x002 col=0x8b accepted @1799 returned @1841
+      expected 0x570f7f5e73b9d33d
+      actual   0x0c4577d5b10081ca  (xor 0x5b4a088bc2b952f7)
+      last writer id=174 @1821
+      diagnosis: unrelated value (31 bits differ)
+UVM_ERROR [SB_DATA_MISMATCH] (cycle 1843) read id=172 ba=1 row=0x002 col=0x8b accepted @1802 returned @1843
+      expected 0x570f7f5e73b9d33d
+      actual   0x0c4577d5b10081ca  (xor 0x5b4a088bc2b952f7)
+      last writer id=174 @1821
+      diagnosis: unrelated value (31 bits differ)

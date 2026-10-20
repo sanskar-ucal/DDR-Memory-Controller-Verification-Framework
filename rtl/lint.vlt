@@ -1,0 +1,5 @@
+`verilator_config
+// ddr_pkg is shared with the testbench; some of its parameters and helper
+// argument bits are only consumed by verification code.
+lint_off -rule UNUSEDPARAM  -file "*/ddr_pkg.sv"
+lint_off -rule UNUSEDSIGNAL -file "*/ddr_pkg.sv"
